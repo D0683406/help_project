@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>輸入資料</title>
+    <link href="http://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+
+        #my_map{
+            height: 300px;
+            width: 100%;
+        }
+
+        #info_outer{
+            height:500px;
+            width: 980px; 
+        }
+
+        #donate_info{
+            top:100px;
+            position: relative;
+            height: 500px;
+            width: 500px;
+            left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg">
+        <div id="outer">
+            <div id="header" style="height:198px; width:980px;">
+                <div id="logo">
+                    <h1>
+                        <a href="index.html" style="position:relative; top:30px;"><font size="8">偏鄉幫助計畫</font></a>
+                    </h1>
+                </div>
+                <div id="login"><input class="button " onclick="javascript:location.href='Login.html'" type="submit" value="Login" style="height:25px; width: 50px; size: 10px;"></div>
+                <div id="feedback"><a href="contactus.html"><img src="images\mail.jpg" width="35" height="23" style="position: relative; top:0; height:25px; width: 40px; size: 10px;"></div>
+                <div id="search"></a>
+                    <input class="text" placeholder="請輸入文字" name="search" size="32" maxlength="64" style="position: absolute;
+                                                                                                 right: 150px;right: 80px; height:24px; width:241.6px; top:4px;">
+                    <input class="button" type="submit" value="Search" style="position: absolute; height:24px; width: 50px; top: 4px; right:0px; padding: 0 0 0 0" />
+                </div>
+
+                <div id="nav" style="width: 980px; height: 57px;">
+                    <ul>
+                        <li>
+                            <a href="計畫簡介.html">計畫簡介</a>
+                        </li>
+                        <li>
+                            <a href="觀光推廣.html">觀光推廣</a>
+                        </li>
+                        <li class="first active">
+                            <a href="donate.html">捐款</a>
+                        </li>
+                        <li>
+                            <a href="pragh.html">圖文專區</a>
+                        </li>
+                        <li>
+                            <a href="contactus.html">聯絡我們</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="info_outer">
+
+                <form>
+                    <div id="donate_info">
+                        <div>
+                            <img src="images\thank.gif" style="position:relative; left:100px;">
+                        </div>
+
+                        <div>
+                            <label for="donor">帳戶:</label>
+                            <input class="form-control" id="account" type="text" required="required">
+                        </div>
+
+                        <div>
+                            <label for="donor">密碼 (至少8位元):</label>
+                            <input class="form-control" id="password" type="password" required="required">
+                        </div>
+
+                        <div>
+                            <label for="donor">密碼確認:</label>
+                            <input class="form-control" id="c_password" type="password">
+                        </div>
+
+                        <div>
+
+                        </div>
+
+                        <div>
+                            <label for="donor">方案選擇:</label>
+                            <select class="form-control" id="case">
+                                <option value="300">方案一(自由樂捐):NT.300</option>
+                                <option value="500">方案二(咖啡杯墊組):NT.500</option>
+                                <option value="1000">方案三(超屌圍巾組):NT.1000</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="donor">數量(最多5份):</label>
+                            <select class="form-control" id="num">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div>
+                            <label for="donor">信用卡資料</label>
+                            <input type=text id="pan_no1" size=4  maxlength=4>-
+                            <input type=text id="pan_no2" size=4  maxlength=4>-
+                            <input type=text id="pan_no3" size=4  maxlength=4>-
+                            <input type=text id="pan_no4" size=4  maxlength=4>
+
+                        </div>
+
+                        <div>
+                            <br>
+                            <label for="donor">發票寄送地址:</label>
+                            <input class="form-control" type="text" id="address" required="required">
+                        </div>
+
+                        <!-- <div id="my_map"></div> -->
+
+                        <div>
+                            <br>
+                            <input type="submit" class="btn btn-primary" id="donate_btn">
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    <script>
+
+        $("#donate_btn").click(function () {
+            var acc = $('#account').val();
+            var cr1 = $('#pan_no1').val();
+            var cr2 = $('#pan_no2').val();
+            var cr3 = $('#pan_no3').val();
+            var cr4 = $('#pan_no4').val();
+            var pwd = $("#password").val();
+            var c_pwd = $("#c_password").val();
+            var c = $("#case").val();
+            var n = $("#num").val();
+            if (acc=='') {
+                alert("請輸入帳戶");
+            }
+            else {
+                if (cr1 == '' || cr2 =='' || cr3=='' || cr4=='') {
+                    flag=1;
+                    alert("請輸入正確的信用卡資料");
+                }
+                else {
+                    if (pwd.length < 8) {
+                        alert("密碼長度至少8位元");
+                    }
+                    else {
+                        if (pwd != c_pwd) {
+                            alert("請確認你的密碼");
+                        }
+                        else {
+                            alert("捐款成功!! 總共金額為:" + (c * n));
+                        }
+                    }
+                }
+            }
+        })
+
+
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>

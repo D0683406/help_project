@@ -1,0 +1,152 @@
+<!DOCTYPE html">
+<html>
+
+<head>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>註冊</title>
+    <link href="http://fonts.googleapis.com/css?family=Bitter" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sign_style.css" />
+    <script>
+        function check() {
+            if (document.getElementById("pwd").value.length < 8) {
+                $("#main #pwd").css("background-color", "red")
+                alert("密碼請大於8個字元")
+            }
+            else {
+                if (document.getElementById("pwd").value != document.getElementById("pwd_confir").value) {
+                    $("#main #pwd_confir").css("background-color", "red")
+                    alert("確認密碼與密碼不相符")
+                }
+                else {
+                    alert("註冊成功，開始瀏覽網站吧！")
+                    window.location.href = '123.html'
+                }
+            }
+        }
+        $(document).ready(function () {
+            $("#main #pwd").on("click", function () {
+                $("#main #pwd").css("background-color", "white");
+            });
+            $("#main #pwd_confir").on("click", function () {
+                $("#main #pwd_confir").css("background-color", "white");
+            });
+        });
+    </script>
+
+    <style>
+        h2{
+            text-align: center;
+        }
+        .fieldset{
+            color:black;
+            text-align: center;
+        }
+
+        #main input[type=text],input[type=password],input[type=email] {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        #main input[type=button] {
+            width: 25%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #main input[type=button]:hover {
+            background-color: #45a049;
+        }
+
+        fieldset {
+            border-radius: 5px;
+            background-color: #cee9dc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bg">
+        <div id="outer">
+            <div id="header">
+                <div id="logo">
+                    <h1>
+                        <a href="index.html">偏鄉幫助計畫</a>
+                    </h1>
+                </div>
+                <div id="login"><input class="button" onclick="javascript:location.href='Login.html'" type="submit"
+                    value="Login"></div>
+            <div id="feedback"><a href="contactus.html"><img src="images\mail.jpg" width="35" height="23"></div>
+            <div id="search" style="top:0;"></a>
+                <input class="text" placeholder="請輸入文字" name="search" size="32" maxlength="64" />
+                <input class="button" type="submit" value="Search" />
+            </div>
+
+                <div id="nav">
+                    <ul>
+                        <li class="first active">
+                            <a href="計畫簡介.html">計畫簡介</a>
+                        </li>
+                        <li>
+                            <a href="觀光推廣.html">觀光推廣</a>
+                        </li>
+                        <li>
+                            <a href="donate.html">捐款</a>
+                        </li>
+                        <li>
+                            <a href="pragh.html">圖文專區</a>
+                        </li>
+                        <li>
+                            <a href="contactus.html">聯絡我們</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="main">
+                <h2>建立新帳號</h2>
+                <form action="/action_page.php">
+                    <fieldset class="fieldset">
+                        <legend>
+                            <l>註冊</l>
+                        </legend>
+                        &nbsp;&nbsp;<l>帳號:</l><br>&nbsp;
+                        <input type="text" name="account" value="" class="regestration">
+                        <br>
+                        &nbsp;&nbsp;<l>密碼(至少大於8個字):</l><br>&nbsp;
+                        <input type="password" name="pwd" id="pwd" value="" class="regestration">
+                        <br>
+                        &nbsp;&nbsp;<l>確認密碼:</l><br>&nbsp;
+                        <input type="password" name="pwd_confir" id="pwd_confir" value="" class="regestration">
+                        <br>
+                        &nbsp;&nbsp;<l>E-Mail:</l><br>&nbsp;
+                        <input type="email" name="emailaddress" value="" class="regestration">
+                        <br><br>&nbsp;&nbsp;
+                        <input type="button" value="註冊" class="regestration" onclick="check()">
+
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>
